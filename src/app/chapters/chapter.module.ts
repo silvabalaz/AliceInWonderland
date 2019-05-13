@@ -5,9 +5,11 @@ import { ChapterShellComponent } from './chapter-shell/chapter-shell.component';
 import { ChapterListComponent } from './chapter-list/chapter-list.component';
 import { CommonModule } from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ChapterDetailsComponent } from './chapter-details/chapter-details.component';
 
 const ChapterRoutes: Routes = [
-  { path: '', component: ChapterShellComponent }
+  { path: '', component: ChapterShellComponent },
+  { path: ':id', component: ChapterDetailsComponent }
 ];
 
 @NgModule({
@@ -18,7 +20,8 @@ const ChapterRoutes: Routes = [
   ],
   declarations: [
     ChapterShellComponent,
-    ChapterListComponent
+    ChapterListComponent,
+    ChapterDetailsComponent
   ]
 })
 export class ChapterModule { }

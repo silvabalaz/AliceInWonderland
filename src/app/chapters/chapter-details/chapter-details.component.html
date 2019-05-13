@@ -1,0 +1,86 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+  <div class="card-body">
+    <form novalidate (ngSubmit)="saveChapter()" [formGroup]="chapterForm">
+      <fieldset>
+        <div class="form-group row" >
+          <label class="col-md-5 col-form-label" for="chapterNameId">Chapter Name</label>
+          <div class="col-md-6">
+            <input
+                   class="form-control"
+                   id="chapterNameId"
+                   type="text"
+                   placeholder="Name (required)"
+                   formControlName="chapterName"
+                    />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-5 col-form-label" for="chapterSentence">Chapter Sentence</label>
+          <div class="col-md-6">
+            <input
+              class="form-control"
+              id="chapterSentence"
+              type="text"
+              placeholder="chapter sentence"
+              formControlName="chapterSentence"
+            />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-5 col-form-label" for="puzzle">Puzzle</label>
+          <div class="col-md-6">
+            <input
+              class="form-control"
+              id="puzzle"
+              type="text"
+              placeholder="Puzzle"
+              formControlName="puzzle"
+            />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-5 col-form-label" for="mainCharacter">Main Character</label>
+          <div class="col-md-6">
+            <input
+              class="form-control"
+              id="mainCharacter"
+              type="text"
+              placeholder="Main character"
+              formControlName="mainCharacter"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-10 col-md-offset-2">
+            <span>
+              <button class="btn btn-primary" type="submit"[disabled]="!chapterForm.valid || !chapterForm.dirty">
+                Save
+              </button>
+            </span>
+            <span>
+              <button class="btn btn-light" type="button" style="" (click)="cancelEdit()">
+                Cancel
+              </button>
+            </span>
+            <span>
+              <button class='btn btn-outline-secondary' (click) = 'onBack()'><i class='fa fa-chevron-left'></i>
+                Back
+              </button>
+            </span>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  Error: {{ errorMessage }}
+</div>
+

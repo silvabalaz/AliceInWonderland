@@ -10,6 +10,10 @@ const routes: Routes = [
     component: ShellComponent,
     children: [
       { path: 'welcome', component: WelcomeComponent },
+      {
+        path: 'chapters',
+        loadChildren: './chapters/chapter.module#ChapterModule'
+      },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
     ]
   },

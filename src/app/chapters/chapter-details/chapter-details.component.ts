@@ -14,6 +14,7 @@ export class ChapterDetailsComponent implements OnInit {
   pageTitle = 'Chapter Details';
   errorMessage: string;
   chapterForm: FormGroup;
+  submitted = false;
   chapter: Chapter | null;
   sub: Subscription;
 
@@ -26,18 +27,39 @@ export class ChapterDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.chapterForm = this.fb.group({
-      chapterName: ['', Validators.required],
-      chapterSentence: [''],
-      puzzle: [''],
-      mainCharacter: ['']
+      chapterName: [{value: '', disabled: true}, [Validators.required, Validators.minLength(6)]],
+      chapterSentence: [{value: '', disabled: true}],
+      puzzle: [{value: '', disabled: true}],
+      mainCharacter: [{value: '', disabled: true}]
     });
     this.sub = this.chapterService.selectedChapterChanges$.subscribe(
-      selectedChapter => this.displayChapter(selectedChapter)
+      selectedChapter => {
+        if (selectedChapter.chapterName === 'New') {
+          this.chapterForm.get('chapterName').enable();
+          this.chapterForm.get('chapterSentence').enable();
+          this.chapterForm.get('puzzle').enable();
+          this.chapterForm.get('mainCharacter').enable();
+        }
+        this.displayChapter(selectedChapter)
+      }
     );
+    this.getChapter();
   }
+
+  get f() { return this.chapterForm.controls; }
+  get chapterName() { return this.chapterForm.get('chapterName'); }
 
   onBack(): void {
     this.router.navigate(['/chapters']);
+  }
+
+  getChapter(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.chapterService.getChapter(id)
+      .subscribe(chapter => {
+            this.chapter = chapter;
+            this.displayChapter(this.chapter);
+       });
   }
 
   displayChapter(chapter: Chapter): void {
@@ -51,17 +73,16 @@ export class ChapterDetailsComponent implements OnInit {
         this.pageTitle = 'Add chapter';
       } else {
         this.pageTitle = `Details: ${this.chapter.chapterName}`;
+        this.chapterForm.patchValue({
+          chapterName: this.chapter.chapterName,
+          chapterSentence: this.chapter.chapterSentence,
+          puzzle: this.chapter.puzzle,
+          mainCharacter: this.chapter.mainCharacter
+        });
       }
-      this.chapterForm.patchValue({
-        name: this.chapter.chapterName,
-        chapterSentance: this.chapter.chapterSentence,
-        puzzle: this.chapter.puzzle,
-        mainCharacter: this.chapter.mainCharacter
-      });
     }
   }
   cancelEdit(): void {
-    // Redisplay the currently selected chapter
     this.displayChapter(this.chapter);
   }
 

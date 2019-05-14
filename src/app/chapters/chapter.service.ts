@@ -10,8 +10,9 @@ import { Chapter } from './chapter';
   providedIn: 'root',
 })
 export class ChapterService {
-  private ChaptersUrl = 'api/chapters';
+  private chaptersUrl = 'api/chapters';
   private chapters: Chapter[];
+  private chapter: Chapter;
 
   private selectedChapterSource = new BehaviorSubject<Chapter| null>(null);
   selectedChapterChanges$ = this.selectedChapterSource.asObservable();
@@ -26,7 +27,7 @@ export class ChapterService {
     if (this.chapters) {
       return of(this.chapters);
     }
-    return this.http.get<Chapter[]>(this.ChaptersUrl)
+    return this.http.get<Chapter[]>(this.chaptersUrl)
       .pipe(
         tap(data => console.log(JSON.stringify(data))),
         tap(data => this.chapters = data),
@@ -34,12 +35,22 @@ export class ChapterService {
       );
   }
 
+  getChapter(id: number): Observable<Chapter> {
+    return this.http.get<Chapter>(this.chaptersUrl + '/' + id)
+      .pipe(
+        tap(data => console.log(JSON.stringify(data))),
+        tap(data => this.chapter = data),
+        catchError(this.handleError)
+      );
+  }
+
   // Return an initialized Chapter
-  newChapter(): Chapter {
+  newChapter(id: number): Chapter {
+    const idNumber = id;
     return {
-      id: 0,
-      chapterName: '',
-      chapterSentence: 'New',
+      id: idNumber,
+      chapterName: 'New',
+      chapterSentence: '',
       puzzle: '',
       mainCharacter: ''
     };
@@ -48,7 +59,7 @@ export class ChapterService {
   createChapter(chapter: Chapter): Observable<Chapter> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     chapter.id = null;
-    return this.http.post<Chapter>(this.ChaptersUrl, chapter, { headers: headers })
+    return this.http.post<Chapter>(this.chaptersUrl, chapter, { headers: headers })
       .pipe(
         tap(data => console.log('createChapter: ' + JSON.stringify(data))),
         tap(data => {
@@ -60,7 +71,7 @@ export class ChapterService {
 
   deleteChapter(id: number): Observable<{}> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const url = `${this.ChaptersUrl}/${id}`;
+    const url = `${this.chaptersUrl}/${id}`;
     return this.http.delete<Chapter>(url, { headers: headers })
       .pipe(
         tap(data => console.log('deleteChapter: ' + id)),
@@ -76,7 +87,7 @@ export class ChapterService {
 
   updateChapter(chapter: Chapter): Observable<Chapter> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const url = `${this.ChaptersUrl}/${chapter.id}`;
+    const url = `${this.chaptersUrl}/${chapter.id}`;
     return this.http.put<Chapter>(url, chapter, { headers: headers })
       .pipe(
         tap(() => console.log('updateChapter: ' + chapter.id)),

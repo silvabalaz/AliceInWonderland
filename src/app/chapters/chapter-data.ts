@@ -9,7 +9,7 @@ export class ChapterData implements InMemoryDbService {
             {
                 'id': 1,
                 'chapterName': 'Down the Rabbit Hole',
-                'chapterSentence': 'going out altogether, like a candle"',
+                'chapterSentence': 'going out altogether, like a candle',
                 'puzzle': 'Limit of a function',
                 'mainCharacter': 'White Rabbit'
             },

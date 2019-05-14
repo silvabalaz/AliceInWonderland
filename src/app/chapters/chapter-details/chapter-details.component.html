@@ -14,7 +14,11 @@
                    type="text"
                    placeholder="Name (required)"
                    formControlName="chapterName"
-                    />
+                   required/>
+            <div *ngIf="chapterName.invalid && (chapterName.dirty || chapterName.touched)" class="alert alert-danger">
+            <div *ngIf="chapterName.errors.required"> Name is required.</div>
+            <div *ngIf="chapterName.errors.minlength"> Name must be at least 6 characters long.</div>
+            </div>
           </div>
         </div>
 

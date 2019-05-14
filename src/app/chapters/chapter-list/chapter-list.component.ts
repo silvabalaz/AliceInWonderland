@@ -36,8 +36,8 @@ export class ChapterListComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  newChapter(): void {
-    this.chapterService.changeSelectedChapter(this.chapterService.newChapter());
+  newChapter(id: number): void {
+    this.chapterService.changeSelectedChapter(this.chapterService.newChapter(id));
   }
 
   chapterSelected(chapter: Chapter): void {

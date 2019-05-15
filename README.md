@@ -47,3 +47,6 @@ New chapter *id* has value of the length of the existing chapters list plus one.
             <button class="btn btn-primary bg" [routerLink]="['/chapters', chapters?.length + 1]"                                                 (click)="newChapter(chapters?.length + 1)"> Add </button>
             
 There is a link from each chapter to play puzzle related to that chapter.
+
+**Screenshots**
+

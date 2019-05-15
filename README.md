@@ -50,7 +50,7 @@ There is a link from each chapter to play puzzle related to that chapter.
 
 **Screenshots**
 
-Velcome
+Welcome
 
 
 ![A1](https://user-images.githubusercontent.com/6881169/57789818-f3e19800-7739-11e9-9a99-be1bc4981b9f.png)

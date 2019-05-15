@@ -49,9 +49,21 @@ New chapter *id* has value of the length of the existing chapters list plus one.
 There is a link from each chapter to play puzzle related to that chapter.
 
 **Screenshots**
+Velcome
+
+
 ![A1](https://user-images.githubusercontent.com/6881169/57789818-f3e19800-7739-11e9-9a99-be1bc4981b9f.png)
+
+Details
+
 ![A2](https://user-images.githubusercontent.com/6881169/57789820-f47a2e80-7739-11e9-8676-c064a4f3e5f3.png)
+
+Add
+
 ![A3](https://user-images.githubusercontent.com/6881169/57789821-f512c500-7739-11e9-947c-2637ebcbba7c.png)
+
+Validation
+
 ![A4](https://user-images.githubusercontent.com/6881169/57789824-f512c500-7739-11e9-8bff-63e4141c0660.png)
 
 

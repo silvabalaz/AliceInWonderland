@@ -52,22 +52,21 @@ There is a link from each chapter to play puzzle related to that chapter.
 
 Welcome
 
-
-![A1](https://user-images.githubusercontent.com/6881169/57789818-f3e19800-7739-11e9-9a99-be1bc4981b9f.png)
+![Slika zaslona 2021-07-09 u 09 12 49](https://user-images.githubusercontent.com/6881169/125039509-dd73c480-e096-11eb-9ae7-23b1840cea53.png)
 
 Details
 
 
-![A2](https://user-images.githubusercontent.com/6881169/57789820-f47a2e80-7739-11e9-8676-c064a4f3e5f3.png)
+![Slika zaslona 2021-07-09 u 09 13 42](https://user-images.githubusercontent.com/6881169/125039577-eebcd100-e096-11eb-908b-7c92684faa71.png)
 
 List
 
 
-![A3](https://user-images.githubusercontent.com/6881169/57789821-f512c500-7739-11e9-947c-2637ebcbba7c.png)
+![Slika zaslona 2021-07-09 u 09 13 12](https://user-images.githubusercontent.com/6881169/125039552-e82e5980-e096-11eb-9908-6578b91db661.png)
 
 Validation/add
 
 
-![A4](https://user-images.githubusercontent.com/6881169/57789824-f512c500-7739-11e9-8bff-63e4141c0660.png)
+![Slika zaslona 2021-07-09 u 09 14 08](https://user-images.githubusercontent.com/6881169/125039567-ec5a7700-e096-11eb-8b26-afe73f29563d.png)
 
 

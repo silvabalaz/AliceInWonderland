@@ -6,7 +6,7 @@ import { ChapterService } from '../chapter.service';
 import { Chapter } from '../chapter';
 
 @Component({
-  selector: 'app-pm-chapter-details',
+  selector: 'app-chapter-details',
   templateUrl: './chapter-details.component.html',
   styleUrls: ['./chapter-details.component.css']
 })
@@ -40,13 +40,11 @@ export class ChapterDetailsComponent implements OnInit {
           this.chapterForm.get('puzzle').enable();
           this.chapterForm.get('mainCharacter').enable();
         }
-        this.displayChapter(selectedChapter)
+        this.displayChapter(selectedChapter);
       }
     );
     this.getChapter();
   }
-
-  get f() { return this.chapterForm.controls; }
   get chapterName() { return this.chapterForm.get('chapterName'); }
 
   onBack(): void {
@@ -90,7 +88,7 @@ export class ChapterDetailsComponent implements OnInit {
     if (this.chapterForm.valid) {
       if (this.chapterForm.dirty) {
         const p = {...this.chapter, ...this.chapterForm.value};
-          this.chapterService.createChapter(p).subscribe(
+        this.chapterService.createChapter(p).subscribe(
             chapter => this.chapterService.changeSelectedChapter(chapter),
             (err: any) => this.errorMessage = err.error
           );

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
+.card-body {
+  padding: 0;
+}
+
+.card{
+  background-color: rgba(207, 174, 213, 0.72);
+}
+.card-header {
+  background-color: rgba(141, 90, 147, 0.6);
+  color: white;
+  font-weight: bold;
+  font-family: 'M+PLUS+1p' !important;
+}
+
+.btn-primary {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+.form-control {
+  color: #1f2121;
+}
+.col-form-label {
+  color: rgba(186, 82, 186, 0.89);
+  font-family: 'M+PLUS+1p' !important;
+}
+.form-control[_ngcontent-vbs-c2] {
+  color: #846386;
+}
+.list-group-item.active {
+  z-index: 2;
+  background-color: #b18cc9;
+  font-color: white;
+  border-color: #976fbb;
+}
+.list-group-item-action {
+  width: 100%;
+  color: #816697;
+  text-align: inherit;
+  background-color: rgba(207, 174, 213, 0.72);
+}
+.center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  outline: 0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}

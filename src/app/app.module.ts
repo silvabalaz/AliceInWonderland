@@ -3,27 +3,33 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShellComponent } from './home/shell.component';
-import { MenuComponent } from './home/menu.component';
-import { WelcomeComponent } from './home/welcome.component';
-import { PageNotFoundComponent } from './home/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { ChapterData } from './chapters/chapter-data';
+import { ChapterData } from './chapter-data';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import {WelcomeComponent} from './home/welcome.component';
+import {PageNotFoundComponent} from './home/page-not-found.component';
+import {ChapterDetailsComponent} from "./chapter-details/chapter-details.component";
+import {ChapterListComponent} from './chapter-list/chapter-list.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShellComponent,
-    MenuComponent,
     WelcomeComponent,
-    PageNotFoundComponent
+    FooterComponent,
+    HeaderComponent,
+    PageNotFoundComponent,
+    ChapterDetailsComponent,
+    ChapterListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(ChapterData),
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

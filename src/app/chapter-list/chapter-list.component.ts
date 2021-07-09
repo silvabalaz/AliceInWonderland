@@ -6,7 +6,7 @@ import { Chapter } from '../chapter';
 import { ChapterService } from '../chapter.service';
 
 @Component({
-  selector: 'app-pm-chapter-list',
+  selector: 'app-chapter-list',
   templateUrl: './chapter-list.component.html',
   styleUrls: ['./chapter-list.component.css']
 })

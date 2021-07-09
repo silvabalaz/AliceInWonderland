@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
+.card{
+  background-color: rgba(207, 174, 213, 0.72);
+}
+.card-header {
+  background-color: rgba(141, 90, 147, 0.6);
+  color: white;
+  font-weight: bold;
+  font-family: 'Rancho';
+  font-size: medium;
+}
+
+.btn-primary {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+.form-control {
+  color: #1f2121;
+  font-family: 'M+PLUS+1p';
+  font-size: medium;
+}
+.col-form-label {
+  color: rgba(186, 82, 186, 0.89);
+  font-family: 'Rancho';
+  font-size: medium;
+}
+.form-control[_ngcontent-vbs-c2] {
+  color: #846386;
+}
+.center {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}

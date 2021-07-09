@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple');
+
+.card-header {
+  background-color: rgba(141, 90, 147, 0.6);
+  color: white;
+  font-weight: bold;
+  font-family: 'Rancho';
+  font-size: xxx-large;
+  justify-content: center;
+  align-items: center;
+}
+.card-body {
+  padding: 0;
+  background-color: rgba(207, 174, 213, 0.72);
+}
+.main-content {
+  margin-top: 25px;
+}
+.card{
+  background-color: rgba(207, 174, 213, 0.72);
+}
+
+.list-group{
+  background-color: rgba(207, 174, 213, 0.72);
+  font-family: 'Rancho';
+  font-size: medium;
+}
+.center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  outline: 0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+.list-group-item.active {
+  z-index: 2;
+  background-color: rgba(207, 174, 213, 0.72);
+  color: rgba(141, 90, 147, 0.6);
+  border-color: rgba(207, 174, 213, 0.72);
+  font-family: 'Rancho';
+  font-size: medium;
+}
+.list-group-item-action {
+  width: 100%;
+  color: #ffffff;
+  text-align: inherit;
+  background-color: rgba(141, 90, 147, 0.6);
+  font-family: 'Rancho';
+  font-size: medium;
+}
+.btn-primary{
+  background-color: rgba(207, 174, 213, 0.72);
+  font-family: 'Rancho';
+  font-size: medium;
+}
